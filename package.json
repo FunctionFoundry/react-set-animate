@@ -1,6 +1,6 @@
 {
   "name": "react-set-animate",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Simple animations with React state",
   "main": "lib/ReactSetAnimate.js",
   "jsnext:main": "src/ReactSetAnimate.js",
