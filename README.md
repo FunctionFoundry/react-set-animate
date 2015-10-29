@@ -1,4 +1,6 @@
-# react-state-animation
+# react-set-animate
+
+Based on the excellent project https://github.com/tejitak/react-state-animation
 
 react-state-animation provides a Promise based API for mutating the value of a React component; built with
 D3's timer, ease and interpolation routines.
