@@ -21,10 +21,6 @@ import {Animate, AnimatedComponent} from 'react-set-animate'
 
 This will require ES5 modules converted by babel. ES6 sources are in /src and converted ES5 modules are located in /lib.
 
-##Demo
-
-[http://petermoresi.github.io/react-set-animate/examples/demo/](http://petermoresi.github.io/react-set-animate/examples/demo/)
-
 ## API
 
   - linearIn(*stateProp*, *endStateValue*, *duration*)
