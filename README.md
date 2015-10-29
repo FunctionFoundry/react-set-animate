@@ -1,8 +1,8 @@
 # react-set-animate
 
-Based on the excellent project https://github.com/tejitak/react-state-animation
+Based on the excellent project https://github.com/petermoresi/react-set-animate
 
-react-state-animation provides a Promise based API for mutating the value of a React component; built with
+react-set-animate provides a Promise based API for mutating the value of a React component; built with
 D3's timer, ease and interpolation routines.
 
 This works with [React](http://facebook.github.io/react/) v0.14.
@@ -10,24 +10,24 @@ It is planned to work with [React Canvas](https://github.com/Flipboard/react-can
 
 ## Installation
 ```
-npm install react-state-animation --save
+npm install react-set-animate --save
 ```
 
 Include the module by CommonJS way  
 
 ```
-import {Animate, AnimatedComponent} from 'react-state-animation'
+import {Animate, AnimatedComponent} from 'react-set-animate'
 ```
 or
 ```
-var ReactStateAnimation = require('react-state-animation').Animated;
+var ReactStateAnimation = require('react-set-animate').Animated;
 ```  
 
 This will require ES5 modules converted by babel. ES6 sources are in /src and converted ES5 modules are located in /lib.
 
 ##Demo
 
-[http://tejitak.github.io/react-state-animation/examples/demo/](http://tejitak.github.io/react-state-animation/examples/demo/)
+[http://petermoresi.github.io/react-set-animate/examples/demo/](http://petermoresi.github.io/react-set-animate/examples/demo/)
 
 ## API
 
@@ -69,7 +69,7 @@ All of these functions return a process that is resolved when the transition is 
 ### Example 0. Extend AnimatedComponent
 
 ```js:extend.js
-import {AnimatedComponent} from 'react-state-animation'
+import {AnimatedComponent} from 'react-set-animate'
 
 class MyAnimatedComponent extends AnimatedComponent {
   handleClick() {
@@ -97,7 +97,7 @@ Set any state (e.g. 'x') associated with position left style
 
 ```js:Demo.js
 import React from 'react'
-import ReactStateAnimation from 'react-state-animation'
+import ReactStateAnimation from 'react-set-animate'
 
 export default class Demo extends React.Component {
     constructor(props) {
@@ -149,7 +149,7 @@ Set any state (e.g. 'x') associated with position left style
 ```js:DemoCanvas.js
 import React from 'react'
 import ReactCanvas from 'react-canvas'
-import ReactStateAnimation from 'react-state-animation'
+import ReactStateAnimation from 'react-set-animate'
 
 var Surface = ReactCanvas.Surface
 var Group = ReactCanvas.Group
@@ -218,7 +218,7 @@ DemoCanvas.defaultProps = {
 ## Note
 React setState is now asynchronously called as a batch. So, using regular instance properties instead of state seems fast especially for React Canvas.
 
-Please check the [demo for canvas performance between React Canvas with setState (asynchronous and batch) and without setStates](http://tejitak.github.io/react-state-animation/examples/demo/canvas.html)
+Please check the [demo for canvas performance between React Canvas with setState (asynchronous and batch) and without setStates](http://petermoresi.github.io/react-set-animate/examples/demo/canvas.html)
 
 
 ## Development
