@@ -1,8 +1,12 @@
 "use strict";
 
+var _interopRequire = function (obj) { return obj && obj.__esModule ? obj["default"] : obj; };
+
 var _createClass = (function () { function defineProperties(target, props) { for (var key in props) { var prop = props[key]; prop.configurable = true; if (prop.value) prop.writable = true; } Object.defineProperties(target, props); } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 
 var _classCallCheck = function (instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } };
+
+/* Promise-based Animate routine */
 
 var ease = require("d3-ease").ease;
 
@@ -10,7 +14,7 @@ var timer = require("d3-timer").timer;
 
 var interpolate = require("d3-interpolate").interpolate;
 
-var eases = ["linear-in", "linear-out", "linear-in-out", "quad-in", "quad-out", "quad-in-out", "cubic-in", "cubic-out", "cubic-in-out", "poly-in", "poly-out", "poly-in-out", "sin-in", "sin-out", "sin-in-out", "exp-in", "exp-out", "exp-in-out", "circle-in", "circle-out", "circle-in-out", "bounce-in", "bounce-out", "bounce-in-out", "back-in", "back-out", "back-in-out", "elastic-in", "elastic-out", "elastic-in-out"];
+var eases = _interopRequire(require("./Eases"));
 
 /**
 * React state animation wrapper

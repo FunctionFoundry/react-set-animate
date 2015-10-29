@@ -25,7 +25,7 @@ import {Animate, AnimatedComponent} from 'react-set-animate'
 
 ### ES5 require
 
-CommonJS code compiled to ES5 is available in the lib directory.
+CommonJS code compiled to ES5 is available in the build directory.
 
 ```
 var Animate = require('react-set-animate').Animate;
