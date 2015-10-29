@@ -8,9 +8,10 @@ class Counter extends AnimatedComponent {
     this.state = {
       counter: 0,
       left: 1000,
-      ease: ''
+      checked: false
     }
-    this.interval = setInterval(() => this.tick(), 1000)
+    this.tick = this.tick.bind(this)
+    this.interval = setInterval( this.tick, 1000)
     this.setAnimate('bounce-in-out', 'left', 0, 4000)
     this.handleHeadingClick = this.handleHeadingClick.bind(this)
   }
@@ -32,11 +33,8 @@ class Counter extends AnimatedComponent {
     .then( () => cmp.setAnimate(this.state.ease, 'left', 0, this.refs.timeIn.value) )
   }
 
-  handleClickAll(event) {
-    this.setState({ 'checked': !this.state.checked })
-  }
-
   render() {
+    var cmp = this;
     return (
       <div>
         <h1>Slider Demo</h1>
@@ -48,13 +46,13 @@ class Counter extends AnimatedComponent {
           Out distance
           <input ref="distance" defaultValue={768} />
           All
-          <input ref="moveAll" type="checkbox" checked={this.state.checked} onClick={this.handleClickAll.bind(this)} />
+          <input ref="moveAll" type="checkbox" checked={cmp.state.moveAll} onClick={(e) => cmp.setState({moveAll: e.target.checked})}/>
         </p>
         {Eases.map((ease) =>
           <div>
-            <button onClick={this.handleHeadingClick.bind(this,ease)}>Start {ease}</button>
-            <h2 style={{ backgroundColor: '#000', borderRadius: 25, width: 50, height: 40, paddingTop: 10, textAlign: 'center', color: this.props.color, position: 'relative', left: (this.refs.moveAll.checked || this.state.ease === ease) ? this.state.left : 0 }}>
-              {this.state.counter}
+            <button onClick={cmp.handleHeadingClick.bind(cmp,ease)}>Start {ease}</button>
+            <h2 style={{ backgroundColor: '#000', borderRadius: 25, width: 50, height: 40, paddingTop: 10, textAlign: 'center', color: cmp.props.color, position: 'relative', left: (this.state.moveAll || cmp.state.ease === ease) ? cmp.state.left : 0 }}>
+              {cmp.state.counter}
             </h2>
           </div>
         )}
