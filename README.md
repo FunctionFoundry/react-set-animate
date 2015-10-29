@@ -147,6 +147,6 @@ Demo.defaultProps = {
 
 ## Development
 
-1. Run "npm install"
-2. Run "gulp"
-3. Access to "http://localhost:8080/html/"
+1. Run `npm install`
+2. Build CommonJS `gulp lib`
+3. Run test `npm test`
