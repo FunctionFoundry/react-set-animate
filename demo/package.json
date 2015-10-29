@@ -51,6 +51,6 @@
   "dependencies": {
     "react": "^0.14.0",
     "react-dom": "^0.14.0",
-    "react-set-animate": "../"
+    "react-set-animate": "https://github.com/petermoresi/react-set-animate.git"
   }
 }
