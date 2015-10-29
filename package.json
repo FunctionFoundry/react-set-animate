@@ -2,8 +2,8 @@
   "name": "react-set-animate",
   "version": "0.0.2",
   "description": "Simple animations with React state",
-  "main": "lib/ReactStateAnimation.js",
-  "jsnext:main": "src/ReactStateAnimation.js",
+  "main": "lib/ReactSetAnimate.js",
+  "jsnext:main": "src/ReactSetAnimate.js",
   "scripts": {
     "start": "./node_modules/.bin/gulp",
     "test": "echo \"Error: no test specified\" && exit 1"
