@@ -1,6 +1,6 @@
 {
   "name": "react-set-animate",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Simple animations with React state",
   "main": "lib/ReactStateAnimation.js",
   "jsnext:main": "src/ReactStateAnimation.js",
@@ -21,7 +21,7 @@
     "state",
     "easing"
   ],
-  "author": "tejitak",
+  "author": [ "tejitak", "mbostock", "petermoresi" ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/tejitak/react-state-animation/issues"
