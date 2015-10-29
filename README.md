@@ -13,15 +13,11 @@ It is planned to work with [React Canvas](https://github.com/Flipboard/react-can
 npm install react-set-animate --save
 ```
 
-Include the module by CommonJS way  
+Use ES6
 
 ```
 import {Animate, AnimatedComponent} from 'react-set-animate'
 ```
-or
-```
-var ReactStateAnimation = require('react-set-animate').Animated;
-```  
 
 This will require ES5 modules converted by babel. ES6 sources are in /src and converted ES5 modules are located in /lib.
 
