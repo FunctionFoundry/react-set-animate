@@ -1,6 +1,6 @@
 var test = require('tape')
-var Animate = require('../build/react-set-animate').Animate
-var AnimatedComponent = require('../build/react-set-animate').AnimatedComponent
+var Animate = require('../build/index').Animate
+var AnimatedComponent = require('../build/index').AnimatedComponent
 
 test('it should be there', function(t) {
   t.plan(2)
