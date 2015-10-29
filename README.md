@@ -1,5 +1,7 @@
 # react-set-animate
 
+![circleci](https://circleci.com/gh/petermoresi/react-set-animate.svg?style=shield&circle-token=:circle-token)
+
 Based on the excellent project https://github.com/tejitak/react-state-animation
 
 react-set-animate provides a Promise based API for mutating the value of a React component; built with
