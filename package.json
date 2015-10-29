@@ -6,7 +6,7 @@
   "jsnext:main": "src/ReactSetAnimate.js",
   "scripts": {
     "start": "./node_modules/.bin/gulp",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node test"
   },
   "repository": {
     "type": "git",
@@ -21,7 +21,11 @@
     "state",
     "easing"
   ],
-  "author": [ "tejitak", "mbostock", "petermoresi" ],
+  "author": [
+    "tejitak",
+    "mbostock",
+    "petermoresi"
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/tejitak/react-state-animation/issues"
@@ -46,6 +50,7 @@
     "gulp-if": "^1.2.5",
     "gulp-uglify": "~1.0.2",
     "gulp-webpack": "^1.2.0",
+    "tape": "^4.2.2",
     "webpack": "^1.7.3",
     "yargs": "^3.5.4"
   }
