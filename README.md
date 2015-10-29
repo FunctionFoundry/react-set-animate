@@ -23,6 +23,7 @@ This will require ES5 modules converted by babel. ES6 sources are in /src and co
 
 ## API
 
+  - animate( easeName, prop, endStateValue, duration )
   - linearIn(*stateProp*, *endStateValue*, *duration*)
   - linearOut(*stateProp*, *endStateValue*, *duration*)
   - linearInOut(*stateProp*, *endStateValue*, *duration*)
