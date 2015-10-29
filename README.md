@@ -13,13 +13,21 @@ It is planned to work with [React Canvas](https://github.com/Flipboard/react-can
 npm install react-set-animate --save
 ```
 
-Use ES6
+### ES6 Import
+
+This library is compatible with [jsnext:main](https://github.com/rollup/rollup/wiki/jsnext:main).
 
 ```
 import {Animate, AnimatedComponent} from 'react-set-animate'
 ```
 
-This will require ES5 modules converted by babel. ES6 sources are in /src and converted ES5 modules are located in /lib.
+### ES5 require
+
+CommonJS code compiled to ES5 is available in the
+
+```
+var Animate = require('react-set-animate').Animate;
+```
 
 ## API
 
