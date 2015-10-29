@@ -90,7 +90,7 @@ Set any state (e.g. 'x') associated with position left style
 
 ```js:Demo.js
 import React from 'react'
-import ReactStateAnimation from 'react-set-animate'
+import {Animate} from 'react-set-animate'
 
 export default class Demo extends React.Component {
     constructor(props) {
@@ -99,7 +99,7 @@ export default class Demo extends React.Component {
             x: 0
         }
         // react state animation wrapper
-        this._animate = new ReactStateAnimation(this)
+        this._animate = new Animate(this)
     }
 
     start() {
@@ -134,85 +134,6 @@ Demo.defaultProps = {
     height: 50
 }
 ```
-
-### Example 3. Linear Move in React Canvas
-
-Set any state (e.g. 'x') associated with position left style
-
-```js:DemoCanvas.js
-import React from 'react'
-import ReactCanvas from 'react-canvas'
-import ReactStateAnimation from 'react-set-animate'
-
-var Surface = ReactCanvas.Surface
-var Group = ReactCanvas.Group
-var Layer = ReactCanvas.Layer
-
-export default class DemoCanvas extends React.Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            x: 0
-        }
-        // react state animation wrapper
-        this._animate = new ReactStateAnimation(this)
-    }
-
-    start() {
-        // start animation
-        this._animate.linearInOut('x', 350/*end value*/, 1000/*duration*/)
-    }
-
-    stop() {
-        this._animate.stop()
-    }
-
-    getGroupStyle() {
-        return {
-            position: 'absolute',
-            backgroundColor: "#f4f4f4",
-            top: 0,
-            left: 0,
-            width: this.props.canvasWidth,
-            height: this.props.canvasHeight
-        }
-    }
-
-    getStyle() {
-        return {
-            position: 'absolute',
-            backgroundColor: "#009688",
-            top: 0,
-            left: this.state.x,
-            width: this.props.width,
-            height: this.props.height
-        }
-    }
-
-    render() {
-        return (
-            <Surface ref="surface" top={0} left={0} width={this.props.canvasWidth} height={this.props.canvasHeight} enableCSSLayout={true}>
-               <Group style={this.getGroupStyle()}>
-                    <Layer style={this.getStyle()} />
-                </Group>
-            </Surface>
-        )
-    }
-}
-
-DemoCanvas.defaultProps = {
-    canvasWidth: 400,
-    canvasHeight: 50,
-    width: 50,
-    height: 50
-}
-```
-
-## Note
-React setState is now asynchronously called as a batch. So, using regular instance properties instead of state seems fast especially for React Canvas.
-
-Please check the [demo for canvas performance between React Canvas with setState (asynchronous and batch) and without setStates](http://petermoresi.github.io/react-set-animate/examples/demo/canvas.html)
-
 
 ## Development
 
