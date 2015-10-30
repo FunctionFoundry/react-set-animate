@@ -1,11 +1,10 @@
 {
   "name": "react-set-animate",
-  "version": "0.0.8",
+  "version": "0.0.10",
   "description": "Simple animations with React state",
   "main": "build/index.js",
-  "jsnext:main": "build/index.js",
   "scripts": {
-    "pretest": "gulp",
+    "prepublish": "gulp",
     "test": "faucet `find test -name '*-test.js'`"
   },
   "repository": {
