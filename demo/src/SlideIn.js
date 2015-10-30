@@ -12,8 +12,8 @@ export default class SlideIn extends AnimatedComponent {
       height: 2
     }
 
-    this.setAnimate('linear-in', 'height', 500, 2000)
-    this.setAnimate('linear-in', 'width', 500, 2000)
+    this.setAnimate('linear-in', 'height', 300, 2000)
+    this.setAnimate('linear-in', 'width', 1024, 2000)
     .then(() => this.setAnimate('bounce-in-out', 'top', 100, 2000 ))
 
   }
@@ -28,8 +28,7 @@ export default class SlideIn extends AnimatedComponent {
       backgroundColor: 'red',
       color: 'white',
       fontSize: '3em',
-      textAlign: 'center',
-      paddingTop: '20%'
+      textAlign: 'center'
     }
   }
   render() {
