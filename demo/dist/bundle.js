@@ -10673,7 +10673,7 @@
 	    _get(Object.getPrototypeOf(Counter.prototype), 'constructor', this).call(this, props);
 	    this.state = {
 	      counter: 0,
-	      left: 1000,
+	      left: 0,
 	      checked: false,
 	      isAnimating: false
 	    };
@@ -10706,10 +10706,10 @@
 	      this.state.isAnimating = true;
 	      var cmp = this;
 	      this.state.ease = ease;
-	      cmp.setAnimate(this.state.ease, 'left', this.refs.distance.value, this.refs.timeOut.value).then(function () {
-	        return cmp.setAnimate(_this.state.ease, 'left', 0, _this.refs.timeIn.value);
+	      cmp.setAnimate(this.state.ease, 'left', +this.refs.distance.value, +this.refs.timeOut.value).then(function () {
+	        return cmp.setAnimate(_this.state.ease, 'left', 0, +_this.refs.timeIn.value);
 	      }).then(function () {
-	        return _this.setState({ isAnimating: false });
+	        return _this.setState({ isAnimating: false, ease: '' });
 	      });
 	    }
 	  }, {
@@ -10740,7 +10740,7 @@
 	              return cmp.setState({ moveAll: e.target.checked });
 	            } }),
 	          'All Animating? ',
-	          this.state.isAnimating ? 'Yes' : 'No'
+	          this.state.isAnimating ? 'Yes ' + this.state.ease : 'No'
 	        ),
 	        _reactSetAnimate.Eases.map(function (ease) {
 	          return _react2['default'].createElement(
@@ -10758,7 +10758,7 @@
 	              _react2['default'].createElement(
 	                'h2',
 	                { style: { backgroundColor: '#000', borderRadius: 25, width: 50, height: 40, paddingTop: 10, textAlign: 'center', color: cmp.props.color, position: 'relative', left: _this2.state.moveAll || cmp.state.ease === ease ? cmp.state.left : 0 } },
-	                cmp.state.counter
+	                _this2.state.isAnimating && (_this2.state.moveAll || cmp.state.ease === ease) ? cmp.state.left.toFixed(0) : cmp.state.counter
 	              )
 	            )
 	          );
