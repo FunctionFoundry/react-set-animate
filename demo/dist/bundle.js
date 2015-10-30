@@ -12826,7 +12826,8 @@
 	    this.state = {
 	      left: 0,
 	      checked: false,
-	      isAnimating: false
+	      isAnimating: false,
+	      ease: 'bounce-in-out'
 	    };
 	    this.setAnimate('bounce-in-out', 'left', 0, 4000);
 	    this.handleHeadingClick = this.handleHeadingClick.bind(this);
@@ -12839,7 +12840,7 @@
 	    }
 	  }, {
 	    key: 'handleHeadingClick',
-	    value: function handleHeadingClick(ease, event) {
+	    value: function handleHeadingClick(event) {
 	      var _this = this;
 	
 	      if (this.state.isAnimating) {
@@ -12847,11 +12848,10 @@
 	      }
 	      this.state.isAnimating = true;
 	      var cmp = this;
-	      this.state.ease = ease;
 	      cmp.setAnimate(this.state.ease, 'left', +this.refs.distance.value, +this.refs.timeOut.value).then(function () {
-	        return cmp.setAnimate(_this.state.ease, 'left', 0, +_this.refs.timeIn.value);
+	        return _this.setAnimate(_this.state.ease, 'left', 0, +_this.refs.timeIn.value);
 	      }).then(function () {
-	        return _this.setState({ isAnimating: false, ease: '' });
+	        return _this.setState({ isAnimating: false });
 	      });
 	    }
 	  }, {
@@ -12882,39 +12882,56 @@
 	            _react2['default'].createElement('input', { ref: 'distance', defaultValue: 768 }),
 	            _react2['default'].createElement('hr', null),
 	            _react2['default'].createElement(
-	              'label',
-	              null,
-	              _react2['default'].createElement('input', { ref: 'moveAll', type: 'checkbox', checked: cmp.state.moveAll, onClick: function (e) {
-	                  return cmp.setState({ moveAll: e.target.checked });
-	                } }),
-	              'All'
+	              'select',
+	              { value: cmp.state.ease, onChange: function (e) {
+	                  return _this2.setState({ ease: e.target.value });
+	                } },
+	              _reactSetAnimate.Eases.map(function (n) {
+	                return _react2['default'].createElement(
+	                  'option',
+	                  null,
+	                  n
+	                );
+	              })
 	            ),
 	            '  ',
-	            'Animating? ',
-	            this.state.isAnimating ? 'Yes ' + this.state.ease : 'No'
-	          )
-	        ),
-	        _reactSetAnimate.Eases.map(function (ease) {
-	          return _react2['default'].createElement(
-	            'div',
-	            { style: { paddingTop: 10, paddingBottom: 10, borderTop: '2px solid #999' } },
 	            _react2['default'].createElement(
 	              'button',
-	              { onClick: cmp.handleHeadingClick.bind(cmp, ease) },
-	              'Start ',
-	              ease
+	              { onClick: cmp.handleHeadingClick, disabled: this.state.isAnimating },
+	              'Start'
 	            ),
 	            _react2['default'].createElement(
-	              'div',
-	              { style: { zIndex: 3, height: 60, backgroundColor: '#eef', border: '1px solid black', marginTop: 12 } },
-	              _react2['default'].createElement(
-	                'div',
-	                { style: { zIndex: 2, backgroundColor: '#000', borderRadius: 25, width: 50, height: 35, paddingTop: 15, textAlign: 'center', color: '#FFF', position: 'relative', left: _this2.state.moveAll || cmp.state.ease === ease ? cmp.state.left : 0 } },
-	                _this2.state.moveAll || cmp.state.ease === ease ? cmp.state.left.toFixed(0) : 0
-	              )
+	              'label',
+	              null,
+	              _react2['default'].createElement('input', { ref: 'moveAll', type: 'checkbox', checked: this.state.isAnimating, readOnly: true }),
+	              'Animating'
 	            )
-	          );
-	        })
+	          )
+	        ),
+	        _react2['default'].createElement(
+	          'div',
+	          { style: { paddingTop: 10, paddingBottom: 10, borderTop: '2px solid #999' } },
+	          _react2['default'].createElement(
+	            'h2',
+	            null,
+	            cmp.state.ease
+	          ),
+	          _react2['default'].createElement(
+	            'div',
+	            { style: { zIndex: 3, height: 60, backgroundColor: '#eef', border: '1px solid black', marginTop: 12 } },
+	            _react2['default'].createElement(
+	              'div',
+	              { style: { zIndex: 2,
+	                  backgroundColor: '#000',
+	                  borderRadius: 25, width: 50,
+	                  height: 35, paddingTop: 15,
+	                  textAlign: 'center', color: '#FFF',
+	                  position: 'relative',
+	                  left: cmp.state.left } },
+	              cmp.state.left.toFixed(0)
+	            )
+	          )
+	        )
 	      );
 	    }
 	  }]);
@@ -12968,8 +12985,8 @@
 	      height: 2
 	    };
 	
-	    this.setAnimate('linear-in', 'height', 500, 2000);
-	    this.setAnimate('linear-in', 'width', 500, 2000).then(function () {
+	    this.setAnimate('linear-in', 'height', 300, 2000);
+	    this.setAnimate('linear-in', 'width', 1024, 2000).then(function () {
 	      return _this.setAnimate('bounce-in-out', 'top', 100, 2000);
 	    });
 	  }
@@ -12986,8 +13003,7 @@
 	        backgroundColor: 'red',
 	        color: 'white',
 	        fontSize: '3em',
-	        textAlign: 'center',
-	        paddingTop: '20%'
+	        textAlign: 'center'
 	      };
 	    }
 	  }, {
@@ -13046,8 +13062,8 @@
 	    this.state = {
 	      left: 50,
 	      top: 100,
-	      width: 500,
-	      height: 500
+	      width: 1024,
+	      height: 300
 	    };
 	
 	    this.setAnimate('linear-in', 'height', 0, 2000);
@@ -13068,8 +13084,7 @@
 	        backgroundColor: 'red',
 	        color: 'white',
 	        fontSize: '3em',
-	        textAlign: 'center',
-	        paddingTop: '20%'
+	        textAlign: 'center'
 	      };
 	    }
 	  }, {
