@@ -4,7 +4,7 @@
   "description": "Simple animations with React state",
   "main": "lib/index.js",
   "scripts": {
-    "prepublish": "gulp",
+    "prepublish": "make",
     "test": "faucet `find test -name '*-test.js'`"
   },
   "repository": {
