@@ -1,8 +1,8 @@
 {
   "name": "react-set-animate",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "Simple animations with React state",
-  "main": "build/index.js",
+  "main": "lib/index.js",
   "scripts": {
     "prepublish": "gulp",
     "test": "faucet `find test -name '*-test.js'`"
