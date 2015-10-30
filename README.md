@@ -17,15 +17,13 @@ npm install react-set-animate --save
 
 ### ES6 Import
 
-This library is compatible with [jsnext:main](https://github.com/rollup/rollup/wiki/jsnext:main).
-
 ```
 import {Animate, AnimatedComponent} from 'react-set-animate'
 ```
 
 ### ES5 require
 
-CommonJS code compiled to ES5 is available in the build directory.
+ES5 code is transpiled to a CommonJS format that is ready for webpack or browserify.
 
 ```
 var Animate = require('react-set-animate').Animate;
