@@ -8,8 +8,8 @@ export default class SlideIn extends AnimatedComponent {
     this.state = {
       left: 50,
       top: 100,
-      width: 500,
-      height: 500
+      width: 1024,
+      height: 300
     }
 
     this.setAnimate('linear-in', 'height', 0, 2000)
@@ -29,7 +29,6 @@ export default class SlideIn extends AnimatedComponent {
       color: 'white',
       fontSize: '3em',
       textAlign: 'center',
-      paddingTop: '20%'
     }
   }
   render() {
