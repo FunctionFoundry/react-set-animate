@@ -14,11 +14,10 @@ export default class Animate {
 
   /* Animation constructor accept data container and frames per second.
   */
-  constructor(component, fps=60) {
+  constructor(component) {
 
     // keep internal reference to the component
     this._component = component;
-    this._fps = fps;
     this._setStopped = false;
 
     // generate an interface function for each ease.
