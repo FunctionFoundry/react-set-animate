@@ -46,6 +46,7 @@
     "envify": "^3.2.0",
     "faucet": "0.0.1",
     "gulp": "^3.9.0",
+    "gulp-babel": "^6.0.0",
     "minimist": "^1.2.0",
     "rimraf": "^2.4.3",
     "rollup": "^0.20.2",
