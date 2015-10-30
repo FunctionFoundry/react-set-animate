@@ -8,7 +8,8 @@ class Counter extends AnimatedComponent {
     this.state = {
       counter: 0,
       left: 1000,
-      checked: false
+      checked: false,
+      isAnimating: false
     }
     this.tick = this.tick.bind(this)
     this.interval = setInterval( this.tick, 1000)
@@ -18,7 +19,7 @@ class Counter extends AnimatedComponent {
 
   tick() {
     this.setState({
-      counter: this.state.counter + this.props.increment
+      counter: this.state.counter + this.props.increment,
     })
   }
 
@@ -27,10 +28,13 @@ class Counter extends AnimatedComponent {
   }
 
   handleHeadingClick(ease, event) {
+    if (this.state.isAnimating) { return; }
+    this.state.isAnimating = true
     var cmp = this;
     this.state.ease = ease
     cmp.setAnimate(this.state.ease, 'left', this.refs.distance.value, this.refs.timeOut.value)
     .then( () => cmp.setAnimate(this.state.ease, 'left', 0, this.refs.timeIn.value) )
+    .then( () => this.setState({isAnimating: false}))
   }
 
   render() {
@@ -45,15 +49,19 @@ class Counter extends AnimatedComponent {
           <input ref="timeIn" defaultValue={500} />
           Out distance
           <input ref="distance" defaultValue={768} />
-          All
+          <hr />
           <input ref="moveAll" type="checkbox" checked={cmp.state.moveAll} onClick={(e) => cmp.setState({moveAll: e.target.checked})}/>
+          All
+          Animating? {this.state.isAnimating  ? 'Yes' : 'No'}
         </p>
         {Eases.map((ease) =>
-          <div>
+          <div style={{ paddingTop: 10, paddingBottom: 10, borderTop: '2px solid #999' }}>
             <button onClick={cmp.handleHeadingClick.bind(cmp,ease)}>Start {ease}</button>
-            <h2 style={{ backgroundColor: '#000', borderRadius: 25, width: 50, height: 40, paddingTop: 10, textAlign: 'center', color: cmp.props.color, position: 'relative', left: (this.state.moveAll || cmp.state.ease === ease) ? cmp.state.left : 0 }}>
-              {cmp.state.counter}
-            </h2>
+            <div style={{height: 90, backgroundColor: '#eef', border: '1px solid black', marginTop: 12 }}>
+              <h2 style={{ backgroundColor: '#000', borderRadius: 25, width: 50, height: 40, paddingTop: 10, textAlign: 'center', color: cmp.props.color, position: 'relative', left: (this.state.moveAll || cmp.state.ease === ease) ? cmp.state.left : 0 }}>
+                {cmp.state.counter}
+              </h2>
+          </div>
           </div>
         )}
       </div>
