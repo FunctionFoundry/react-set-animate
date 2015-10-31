@@ -26,6 +26,7 @@ ES5 code is transpiled to a CommonJS format that is ready for webpack or browser
 
 ```
 var Animate = require('react-set-animate').Animate;
+var AnimatedComponent = require('react-set-animate').AnimatedComponent;
 ```
 
 ## Support Transitions
