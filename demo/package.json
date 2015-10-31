@@ -52,6 +52,6 @@
     "react": "^0.14.0",
     "react-dom": "^0.14.0",
     "react-router": "^1.0.0-rc3",
-    "react-set-animate": "0.0.13"
+    "react-set-animate": "0.0.14"
   }
 }
