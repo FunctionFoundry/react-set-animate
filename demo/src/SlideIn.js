@@ -11,11 +11,12 @@ export default class SlideIn extends AnimatedComponent {
       width: 0,
       height: 2
     }
+  }
 
+  componentDidMount() {
     this.setAnimate( 'height', 300, 2000, 'linear-in' )
     this.setAnimate( 'width', 1024, 2000, 'linear-in' )
     .then(() => this.setAnimate( 'top', 100, 2000, 'bounce-in-out' ))
-
   }
 
   getStyle() {

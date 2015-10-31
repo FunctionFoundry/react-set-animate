@@ -10,6 +10,9 @@ export default class EasingExamples extends AnimatedComponent {
       isAnimating: false,
       ease: 'bounce-in-out'
     }
+  }
+
+  componentDidMount() {
     this.setAnimate('left', 0, 4000, 'bounce-in-out')
     this.handleHeadingClick = this.handleHeadingClick.bind(this)
   }
@@ -18,8 +21,8 @@ export default class EasingExamples extends AnimatedComponent {
     if (this.state.isAnimating) { return; }
     this.state.isAnimating = true
     var cmp = this;
-    cmp.setAnimate(this.state.ease, 'left', +this.refs.distance.value, +this.refs.timeOut.value)
-    .then( () => this.setAnimate(this.state.ease, 'left', 0, +this.refs.timeIn.value) )
+    cmp.setAnimate( 'left', +this.refs.distance.value, +this.refs.timeOut.value, this.state.ease)
+    .then( () => this.setAnimate( 'left', 0, +this.refs.timeIn.value, this.state.ease) )
     .then( () => this.setState({isAnimating: false }))
   }
 

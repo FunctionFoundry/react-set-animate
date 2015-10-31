@@ -6,17 +6,8 @@ export default class AnimatedComponent extends Component {
   constructor(props) {
     super(props)
     this.animator = new Animate(this)
-    this.setAnimate = this.animator.animate
-    this.stopAnimate = this.animator.stop
+    this.setAnimate = this.animator.tween.bind(this.animator)
+    this.stopAnimate = this.animator.stop.bind(this.animator)
   }
 
-  _getStateValue(prop) {
-    return this.state[prop]
-  }
-
-  _updateStateValue(prop, v) {
-    var updates = {}
-    updates[prop] = v
-    this.setState(updates)
-  }
 }
