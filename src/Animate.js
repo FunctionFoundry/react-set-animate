@@ -27,7 +27,7 @@ export default class Animate {
 
       // add instance methods dynamically
       this[easeName] = function(prop, end, duration) {
-        return this.animate(e, prop, end, duration)
+        return this.animate( prop, end, duration, e )
       }
 
     });
@@ -63,7 +63,7 @@ export default class Animate {
     this._setStopped = true;
   }
 
-  animate(easing, prop, end, duration) {
+  animate( prop, end, duration=500, easing='linear-in-out') {
 
     return new Promise((resolve, reject) => {
       var begin = this._getStateValue(prop),

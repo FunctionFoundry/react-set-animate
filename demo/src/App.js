@@ -10,8 +10,9 @@ export class App extends Component {
           {/* change the <a>s to <Link>s */}
           <ul style={{listStyleType: 'none', marginTop: -60, float: 'right', marginRight: 20 }}>
             <li style={{ padding: 5, display: 'inline-block'}}><Link to="/about">Easing Types</Link></li>
-              <li style={{ padding: 5, display: 'inline-block'}}><Link to="/slidein">Slide In</Link></li>
+            <li style={{ padding: 5, display: 'inline-block'}}><Link to="/slidein">Slide In</Link></li>
             <li style={{ padding: 5, display: 'inline-block'}}><Link to="/slideout">Slide Out</Link></li>
+            <li style={{ padding: 5, display: 'inline-block'}}><Link to="/tweencolor">Tween Color</Link></li>
           </ul>
         </div>
         <div style={{ paddingTop: 50 }}>
