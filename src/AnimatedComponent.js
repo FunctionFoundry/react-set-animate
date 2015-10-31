@@ -7,16 +7,7 @@ export default class AnimatedComponent extends Component {
     super(props)
     this.animator = new Animate(this)
     this.setAnimate = this.animator.animate
-
-    eases.forEach( (e) => {
-      
-      // convert to camelCase
-      var easeName = e.replace(/-([a-z])/g, function (g) { return g[1].toUpperCase(); });
-
-      // add instance methods dynamically
-      return this[easeName]( prop, end, duration )
-
-    });
+    this.stopAnimate = this.animator.stop
   }
 
   _getStateValue(prop) {

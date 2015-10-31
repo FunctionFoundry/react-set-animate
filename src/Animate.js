@@ -20,17 +20,6 @@ export default class Animate {
     this._component = component;
     this._setStopped = false;
 
-    // generate an interface function for each ease.
-    eases.forEach( (e) => {
-      // convert to camelCase
-      var easeName = e.replace(/-([a-z])/g, function (g) { return g[1].toUpperCase(); });
-
-      // add instance methods dynamically
-      this[easeName] = function(prop, end, duration) {
-        return this.animate( prop, end, duration, e )
-      }
-
-    });
   }
 
   /**
@@ -63,7 +52,7 @@ export default class Animate {
     this._setStopped = true;
   }
 
-  animate( prop, end, duration=500, easing='linear-in-out') {
+  tween( prop, end, duration=500, easing='linear-in-out') {
 
     return new Promise((resolve, reject) => {
       var begin = this._getStateValue(prop),
