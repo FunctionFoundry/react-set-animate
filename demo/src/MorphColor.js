@@ -1,21 +1,19 @@
 import React from 'react';
 import { AnimatedComponent } from 'react-set-animate'
 
-export default class SlideIn extends AnimatedComponent {
+export default class MorphColor extends AnimatedComponent {
   constructor(props) {
     super(props)
 
     this.state = {
       left: 50,
       top: 100,
-      width: 0,
-      height: 2
+      width: 200,
+      height: 200,
+      color: '#000'
     }
 
-    this.setAnimate( 'height', 300, 2000, 'linear-in' )
-    this.setAnimate( 'width', 1024, 2000, 'linear-in' )
-    .then(() => this.setAnimate( 'top', 100, 2000, 'bounce-in-out' ))
-
+    this.setAnimate( 'color', '#FFF', 1000, 'linear-in' )
   }
 
   getStyle() {
@@ -25,8 +23,8 @@ export default class SlideIn extends AnimatedComponent {
       top: this.state.top,
       width: this.state.width,
       height: this.state.height,
-      backgroundColor: 'red',
-      color: 'white',
+      backgroundColor: this.state.color,
+      color: '#FFF',
       fontSize: '3em',
       textAlign: 'center'
     }

@@ -1,10 +1,11 @@
 {
   "name": "react-set-animate",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "description": "Simple animations with React state",
   "main": "lib/index.js",
   "scripts": {
-    "prepublish": "make",
+    "build": "make",
+    "prepublish": "npm run build",
     "test": "faucet `find test -name '*-test.js'`"
   },
   "repository": {

@@ -29,9 +29,15 @@ ES5 code is transpiled to a CommonJS format that is ready for webpack or browser
 var Animate = require('react-set-animate').Animate;
 ```
 
-## API
+## Core API
 
-  - animate( easeName, prop, endStateValue, duration )
+- Animate
+  - animate( stateProp, endStateValue, duration, ease )
+- AnimatedComponent
+  - setAnimate( stateProp, endStateValue, duration, ease )
+
+## Sugar Methods
+- Animate
   - linearIn(*stateProp*, *endStateValue*, *duration*)
   - linearOut(*stateProp*, *endStateValue*, *duration*)
   - linearInOut(*stateProp*, *endStateValue*, *duration*)
@@ -62,6 +68,37 @@ var Animate = require('react-set-animate').Animate;
   - elasticIn(*stateProp*, *endStateValue*, *duration*)
   - elasticOut(*stateProp*, *endStateValue*, *duration*)
   - elasticInOut(*stateProp*, *endStateValue*, *duration*)
+- AnimatedComponent
+  - setlinearIn( stateProp, endStateValue, duration )
+  - setlinearOut( stateProp, endStateValue, duration )
+  - setlinearInOut( stateProp, endStateValue, duration )
+  - setquadIn( stateProp, endStateValue, duration )
+  - setquadOut( stateProp, endStateValue, duration )
+  - setquadInOut( stateProp, endStateValue, duration )
+  - setcubicIn( stateProp, endStateValue, duration )
+  - setcubicOut( stateProp, endStateValue, duration )
+  - setcubicInOut( stateProp, endStateValue, duration )
+  - setpolyIn( stateProp, endStateValue, duration )
+  - setpolyOut( stateProp, endStateValue, duration )
+  - setpolyInOut( stateProp, endStateValue, duration )
+  - setsinIn( stateProp, endStateValue, duration )
+  - setsinOut( stateProp, endStateValue, duration )
+  - setsinInOut( stateProp, endStateValue, duration )
+  - setexpIn( stateProp, endStateValue, duration )
+  - setexpOut( stateProp, endStateValue, duration )
+  - setexpInOut( stateProp, endStateValue, duration )
+  - setcircleIn( stateProp, endStateValue, duration )
+  - setcircleOut( stateProp, endStateValue, duration )
+  - setcircleInOut( stateProp, endStateValue, duration )
+  - setbounceIn( stateProp, endStateValue, duration )
+  - setbounceOut( stateProp, endStateValue, duration )
+  - setbounceInOut( stateProp, endStateValue, duration )
+  - setbackIn( stateProp, endStateValue, duration )
+  - setbackOut( stateProp, endStateValue, duration )
+  - setbackInOut( stateProp, endStateValue, duration )
+  - setelasticIn( stateProp, endStateValue, duration )
+  - setelasticOut( stateProp, endStateValue, duration )
+  - setelasticInOut( stateProp, endStateValue, duration )
 
 All of these functions return a process that is resolved when the transition is complete.
 
@@ -70,12 +107,21 @@ All of these functions return a process that is resolved when the transition is 
 ### Example 0. Extend AnimatedComponent
 
 ```js:extend.js
+import {React} from 'react'
 import {AnimatedComponent} from 'react-set-animate'
 
 class MyAnimatedComponent extends AnimatedComponent {
-  handleClick() {
-    // animate this.state.x over 2000ms with final value of 1000
-    this.setAnimate('linear-in', 'x', 1000, 2000)
+  constructor() {
+
+    this.state = { x: 0 }
+
+    // animate this.state.x over 2 secs with final value of 1000
+    // with the default ease (linear-in-out).
+    this.setAnimate( 'x', 1000, 2000 )
+
+    // animte this.state.x over 500ms with a final value of 0
+    this.setAnimate( 'x', 0, 500 )
+    this.setAnimate( 'x', 0, 500 )
   }
 }
 ```
@@ -87,9 +133,10 @@ var yourComponent = React.render(
     <YourComponent />,
     document.getElementById('demo')
 )
-var reactStateAnimation = new ReactStateAnimation(yourComponent)
+
+var animate = new Animate(yourComponent)
 // your component's state 'x' will be updated to 350 with linear order in 1 sec, then alpha will be 0 on end of moving
-reactStateAnimation.linearInOut('x', 350/*end value*/, 1000/*duration(ms)*/).then(() => reactStateAnimation.linearInOut('alpha', 0, 400))
+animate.linearInOut('x', 350/*end value*/, 1000/*duration(ms)*/).then(() => animate.linearInOut('alpha', 0, 400))
 ```
 
 ### Example 2. Linear Move in React Component

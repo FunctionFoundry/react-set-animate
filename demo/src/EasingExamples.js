@@ -10,12 +10,8 @@ export default class EasingExamples extends AnimatedComponent {
       isAnimating: false,
       ease: 'bounce-in-out'
     }
-    this.setAnimate('bounce-in-out', 'left', 0, 4000)
+    this.setAnimate('left', 0, 4000, 'bounce-in-out')
     this.handleHeadingClick = this.handleHeadingClick.bind(this)
-  }
-
-  componentWillUnmount() {
-    clearInterval(this.interval)
   }
 
   handleHeadingClick(event) {
@@ -49,10 +45,6 @@ export default class EasingExamples extends AnimatedComponent {
             {'  '}
             <button onClick={cmp.handleHeadingClick} disabled={this.state.isAnimating}>Start</button>
 
-            <label>
-              <input ref="moveAll" type="checkbox" checked={this.state.isAnimating} readOnly/>
-              Animating
-            </label>
           </p>
         </div>
         <div style={{ paddingTop: 10, paddingBottom: 10, borderTop: '2px solid #999' }}>
