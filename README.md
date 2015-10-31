@@ -22,7 +22,7 @@ import {Animate, AnimatedComponent} from 'react-set-animate'
 
 ### ES5 require
 
-ES5 code is transpiled to a CommonJS format that is ready for webpack or browserify.
+ES5 code is transpiled to a CommonJS format that is ready for webpack or browserify. It is included in the npm build and you can build them for yourself by running `make`.
 
 ```
 var Animate = require('react-set-animate').Animate;
