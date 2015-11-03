@@ -107,7 +107,7 @@ class MyAnimatedComponent extends AnimatedComponent {
     // with the default ease (linear-in-out).
     this.setAnimate( 'x', 1000, 2000 )
 
-    // animte this.state.x over 500ms with a final value of 0
+    // animate this.state.x over 500ms with a final value of 0
     this.setAnimate( 'x', 0, 500, 'bounce-in-out' )
     this.setAnimate( 'x', 0, 500, 'quad-in-out' )
   }
@@ -130,5 +130,5 @@ animate.tween('x', 350/*end value*/, 1000/*duration(ms)*/).then(() => animate.tw
 ## Development
 
 1. Run `npm install`
-2. Build CommonJS `gulp lib`
+2. Build CommonJS `make`
 3. Run test `npm test`
