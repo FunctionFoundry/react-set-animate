@@ -1,6 +1,6 @@
 {
   "name": "react-set-animate",
-  "version": "0.0.15",
+  "version": "0.0.16",
   "description": "Simple animations with React state",
   "main": "lib/index.js",
   "scripts": {
@@ -10,10 +10,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/petermoresi/react-state-animation.git"
+    "url": "git+https://github.com/petermoresi/react-state-animation.git"
   },
   "keywords": [
     "react",
+    "react-component",
     "react-canvas",
     "animation",
     "tween",
@@ -21,10 +22,7 @@
     "state",
     "easing"
   ],
-  "author": [
-    "tejitak",
-    "petermoresi"
-  ],
+  "author": "Peter Moresi",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/petermoresi/react-state-animation/issues"
@@ -44,5 +42,8 @@
     "faucet": "0.0.1",
     "rimraf": "^2.4.3",
     "tape": "^4.2.2"
+  },
+  "directories": {
+    "test": "test"
   }
 }
