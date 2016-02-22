@@ -92,7 +92,35 @@ All of these functions return a process that is resolved when the transition is 
 
 ## Usage
 
-### Example 1. Extend AnimatedComponent
+### React Mixin
+
+```js:extend.js
+import {React} from 'react'
+import {AnimateMixin} from 'react-set-animate'
+
+const MyAnimatedComponent = React.createClass({
+
+  mixins: [AnimateMixin],
+
+  getInitialState() {
+    return { x: 0 }
+  },
+
+  componentDidMount() {
+
+    // animate this.state.x over 2 secs with final value of 1000
+    // with the default ease (linear-in-out).
+    this.setAnimate( 'x', 1000, 2000 )
+
+    // animate this.state.x over 500ms with a final value of 0
+    this.setAnimate( 'x', 0, 500, 'bounce-in-out' )
+    this.setAnimate( 'x', 0, 500, 'quad-in-out' )
+
+  }
+})
+```
+
+### ES6 Classes
 
 ```js:extend.js
 import {React} from 'react'
@@ -114,7 +142,9 @@ class MyAnimatedComponent extends AnimatedComponent {
 }
 ```
 
-### Example 2. Use outside of component
+### Composition
+
+Use high-order functions for composition.
 
 ```js:app.js
 var yourComponent = React.render(
@@ -127,7 +157,11 @@ var animate = new Animate(yourComponent)
 animate.tween('x', 350/*end value*/, 1000/*duration(ms)*/).then(() => animate.tween('alpha', 0, 400))
 ```
 
-## Development
+## Contribute
+
+Pull requests are welcome!
+
+## Get Setup
 
 1. Run `npm install`
 2. Build CommonJS `make`
