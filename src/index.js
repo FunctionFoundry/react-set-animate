@@ -7,6 +7,7 @@ import Eases from './Eases'
 
 export default {
   Animate,
+  AnimateMixin,
   AnimatedComponent,
   Eases
 }
