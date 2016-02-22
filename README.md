@@ -7,7 +7,6 @@ Based on the excellent project https://github.com/tejitak/react-state-animation
 react-set-animate provides a [Promise](https://promisesaplus.com/) based API to animate [React](https://facebook.github.io/react/) Component's with the power of D3's [timer](https://github.com/d3/d3-timer), [ease](https://github.com/d3/d3-ease) and [interpolation](https://github.com/d3/d3-interpolate) routines.
 
 This works with [React](http://facebook.github.io/react/) v0.14.
-It is planned to work with [React Canvas](https://github.com/Flipboard/react-canvas) when it adds support for 0.14.
 
 ## Installation
 ```
