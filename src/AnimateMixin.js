@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react'
-import {Animate} from './Animate'
+import Animate from './Animate'
 
 const AnimateMixin = {
   componentWillMount() {
