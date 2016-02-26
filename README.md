@@ -16,7 +16,7 @@ npm install react-set-animate --save
 ### ES6 Import
 
 ```
-import {Animate, AnimatedComponent} from 'react-set-animate'
+import {Animate, AnimateMixin, AnimatedComponent} from 'react-set-animate'
 ```
 
 ### ES5 require
