@@ -113,7 +113,8 @@ const MyAnimatedComponent = React.createClass({
 
     // animate this.state.x over 500ms with a final value of 0
     this.setAnimate( 'x', 0, 500, 'bounce-in-out' )
-    this.setAnimate( 'x', 0, 500, 'quad-in-out' )
+    .then(() => this.setAnimate( 'x', 0, 500, 'quad-in-out' ))
+
 
   }
 })
@@ -136,7 +137,7 @@ class MyAnimatedComponent extends AnimatedComponent {
 
     // animate this.state.x over 500ms with a final value of 0
     this.setAnimate( 'x', 0, 500, 'bounce-in-out' )
-    this.setAnimate( 'x', 0, 500, 'quad-in-out' )
+    .then(() => this.setAnimate( 'x', 0, 500, 'quad-in-out' ))
   }
 }
 ```
