@@ -10,7 +10,7 @@ This works with [React](http://facebook.github.io/react/) v0.14.
 
 ## Installation
 ```
-npm install react-set-animate -save
+npm install react-set-animate --save
 ```
 
 ### ES6 Import
