@@ -2,6 +2,8 @@
 
 ![circleci](https://circleci.com/gh/petermoresi/react-set-animate.svg?style=shield&circle-token=:circle-token)
 
+[![npm version](https://badge.fury.io/js/react-set-animate.svg)](https://badge.fury.io/js/react-set-animate)
+
 Based on the excellent project https://github.com/tejitak/react-state-animation
 
 react-set-animate provides a [Promise](https://promisesaplus.com/) based API to animate [React](https://facebook.github.io/react/) Component's with the power of D3's [timer](https://github.com/d3/d3-timer), [ease](https://github.com/d3/d3-ease) and [interpolation](https://github.com/d3/d3-interpolate) routines.
