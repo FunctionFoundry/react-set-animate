@@ -4,8 +4,6 @@
 
 A [Promise](https://promisesaplus.com/) based API to animate [React](https://facebook.github.io/react/) Component's with the power of D3's [timer](https://github.com/d3/d3-timer), [ease](https://github.com/d3/d3-ease) and [interpolation](https://github.com/d3/d3-interpolate) routines.
 
-This works with [React](http://facebook.github.io/react/) v0.14.
-
 ## Installation
 ```
 npm install react-set-animate --save
