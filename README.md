@@ -1,8 +1,6 @@
 # react-set-animate
 
-![circleci](https://circleci.com/gh/petermoresi/react-set-animate.svg?style=shield&circle-token=:circle-token)
-
-[![npm version](https://badge.fury.io/js/react-set-animate.svg)](https://badge.fury.io/js/react-set-animate)
+![circleci](https://circleci.com/gh/petermoresi/react-set-animate.svg?style=shield&circle-token=:circle-token) [![npm version](https://badge.fury.io/js/react-set-animate.svg)](https://badge.fury.io/js/react-set-animate)
 
 Based on the excellent project https://github.com/tejitak/react-state-animation
 
