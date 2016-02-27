@@ -1,6 +1,6 @@
 {
   "name": "react-set-animate",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Simple animations with React state",
   "main": "lib/index.js",
   "scripts": {
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/petermoresi/react-state-animation.git"
+    "url": "git+https://github.com/FunctionFoundry/react-set-animate.git"
   },
   "keywords": [
     "react",
@@ -25,9 +25,9 @@
   "author": "Peter Moresi",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/petermoresi/react-state-animation/issues"
+    "url": "https://github.com/FunctionFoundry/react-set-animate/issues"
   },
-  "homepage": "https://github.com/petermoresi/react-state-animation",
+  "homepage": "https://github.com/FunctionFoundry/react-set-animate",
   "dependencies": {
     "d3-ease": "^0.1.3",
     "d3-interpolate": "^0.1.2",
