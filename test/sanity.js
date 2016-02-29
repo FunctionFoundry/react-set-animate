@@ -9,7 +9,7 @@ test('it should be there', function(t) {
 
   t.equals(typeof Animate, 'function' );
   t.equals(typeof AnimatedComponent, 'function' );
-  t.equals(typeof AnimateMixin, 'function' );
+  t.equals(typeof AnimateMixin, 'object' );
   t.equals( typeof Eases, 'object');
 
   var cmp = new AnimatedComponent();
