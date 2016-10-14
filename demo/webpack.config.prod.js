@@ -33,8 +33,7 @@ module.exports = {
       compressor: {
         warnings: false
       }
-   }),
-    new ExtractTextPlugin('app.css')
+   })
   ],
   node: {
     Buffer: false
@@ -46,9 +45,7 @@ module.exports = {
       include: path.join(__dirname, 'src')
     }, {
       test: /\.scss$/,
-      loader: ExtractTextPlugin.extract(
-        "style",
-        "css!sass")
+      loaders: ['style', 'css', 'sass']
     }, {
       test: /\.json$/,
       loader: 'json'
