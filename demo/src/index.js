@@ -1,22 +1,15 @@
-import React from 'react';
-import { render } from 'react-dom';
-import { App } from './App';
-import EasingExamples from './EasingExamples';
-import SlideIn from './SlideIn';
-import SlideOut from './SlideOut';
-import MorphColor from './MorphColor';
+import React from 'react'
+import { render } from 'react-dom'
+import Page from './Root'
 
-import { Router, Route } from 'react-router'
+import { subscribe } from 'pure-flux'
+
+subscribe( (state, action) => {
+  console.log(new Date(), action, state)
+})
 
 // Finally, we render a <Router> with some <Route>s.
 // It does all the fancy routing stuff for us.
 render((
-  <Router>
-    <Route path="/" component={App}>
-      <Route path="about" component={EasingExamples} />
-      <Route path="slidein" component={SlideIn} />
-      <Route path="slideout" component={SlideOut} />
-      <Route path="tweencolor" component={MorphColor} />
-    </Route>
-  </Router>
-), document.getElementById('root'));
+  <Page />
+), document.getElementById('root'))

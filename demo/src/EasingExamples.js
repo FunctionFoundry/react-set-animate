@@ -59,7 +59,7 @@ export default class EasingExamples extends AnimatedComponent {
                 height: 35, paddingTop: 15,
                 textAlign: 'center', color: '#FFF',
                 position: 'relative',
-                left: cmp.state.left }}>
+                transform: `translate3d(${this.state.left}px,0px,0px)` }}>
                 { cmp.state.left.toFixed(0) }
               </div>
             </div>
