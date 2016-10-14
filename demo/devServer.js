@@ -1,27 +1,43 @@
-var path = require('path');
-var express = require('express');
+var koa = require('koa');
+var app = koa();
+var serveViews = require('koa-front-matter-views');
+var serve = require('koa-static');
+var send = require('koa-send');
+var accesslog = require('koa-accesslog');
+var _ = require('koa-route');
+var moment = require('moment')
+
+app.use(accesslog());
+
 var webpack = require('webpack');
-var config = require('./webpack.config.dev');
+var webpackConfig = require('./webpack.config.dev.js');
+var compiler = webpack(webpackConfig);
+var hotMiddleware = require("webpack-hot-middleware")(compiler);
 
-var app = express();
-var compiler = webpack(config);
+var webpackMiddleware = require("koa-webpack-dev-middleware");
+app.use(webpackMiddleware(compiler, {
+  noInfo: false,
+  lazy: false,
+  publicPath: webpackConfig.output.publicPath
+}))
 
-app.use(require('webpack-dev-middleware')(compiler, {
-  noInfo: true,
-  publicPath: config.output.publicPath
-}));
-
-app.use(require('webpack-hot-middleware')(compiler));
-
-app.get('*', function(req, res) {
-  res.sendFile(path.join(__dirname, 'index.html'));
+app.use(function* (next) {
+  yield hotMiddleware.bind(null, this.req, this.res);
+  yield next;
 });
 
-app.listen(3000, 'localhost', function(err) {
-  if (err) {
-    console.log(err);
-    return;
-  }
+// serve generate pages
+app.use(serveViews({ defaults: {
+  __DEV__: true,
+  __ts__: moment().format('YYYY-MM-DD')
+}}))
 
-  console.log('Listening at http://localhost:3000');
-});
+// serve static assets
+app.use(serve('.'));
+
+// serve the index.html page
+app.use(function *(){
+  yield this.serveView('index')
+})
+
+app.listen(3000);

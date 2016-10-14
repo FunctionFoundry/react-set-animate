@@ -52,7 +52,7 @@ var { location, Container, Link } = Router
 
 const App = React.createClass({
   componentDidMount() {
-    location.open(window.location.pathname)
+    location.redirect(window.location.pathname + window.location.search)
   },
   render () {
     return (
@@ -61,7 +61,7 @@ const App = React.createClass({
           <h1>react-set-animate</h1>
           {/* change the <a>s to <Link>s */}
           <ul style={{listStyleType: 'none', marginTop: -60, float: 'right', marginRight: 20 }}>
-            <li style={{ padding: 5, display: 'inline-block'}}><Link to="/easing">Easing Types</Link></li>
+            <li style={{ padding: 5, display: 'inline-block'}}><Link to="/easing?a=b">Easing Types</Link></li>
             <li style={{ padding: 5, display: 'inline-block'}}><Link to="/slidein">Slide In</Link></li>
             <li style={{ padding: 5, display: 'inline-block'}}><Link to="/slideout">Slide Out</Link></li>
             <li style={{ padding: 5, display: 'inline-block'}}><Link to="/tweencolor">Tween Color</Link></li>

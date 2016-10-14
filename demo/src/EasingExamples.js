@@ -53,18 +53,16 @@ export default class EasingExamples extends AnimatedComponent {
         <div style={{ paddingTop: 10, paddingBottom: 10, borderTop: '2px solid #999' }}>
           <h2>{cmp.state.ease}</h2>
           <div style={{zIndex: 3, height: 60, backgroundColor: '#eef', border: '1px solid black', marginTop: 12 }}>
-            <div style={{ zIndex: 2,
+            <img src="/img/ball.jpeg" style={{ zIndex: 2,
                 backgroundColor: '#000',
                 borderRadius: 25, width: 50,
-                height: 35, paddingTop: 15,
+                height: 50, 
                 textAlign: 'center', color: '#FFF',
                 position: 'relative',
-                transform: `translate3d(${this.state.left}px,0px,0px)` }}>
-                { cmp.state.left.toFixed(0) }
-              </div>
-            </div>
+                transform: `translate3d(${this.state.left}px,0px,0px)` }} />
           </div>
         </div>
+      </div>
       )
     }
   }

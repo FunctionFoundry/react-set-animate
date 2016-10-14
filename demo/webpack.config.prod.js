@@ -1,7 +1,7 @@
 var path = require('path');
 var webpack = require('webpack');
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
-var moment = require('moment')
+var {version} = require('./package.json')
 
 let load = (module) => ['./src/' + module]
 
@@ -11,9 +11,9 @@ module.exports = {
     app: load('index')
   },
   output: {
-    path: path.join(__dirname, 'dist'),
+    path: path.join(__dirname, 'public', 'dist'),
     publicPath: '/dist/',
-    filename: '[name]-' + moment().format('YYYY-MM-DD') + '.js',
+    filename: '[name].js',
   },
   resolveLoader: {
     root: path.join(__dirname, 'node_modules')
@@ -34,7 +34,7 @@ module.exports = {
         warnings: false
       }
    }),
-    new ExtractTextPlugin('app-' + moment().format('YYYY-MM-DD') + '.css')
+    new ExtractTextPlugin('app.css')
   ],
   node: {
     Buffer: false
