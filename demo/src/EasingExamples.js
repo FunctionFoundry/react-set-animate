@@ -29,9 +29,9 @@ export default class EasingExamples extends AnimatedComponent {
   render() {
     var cmp = this;
     return (
-      <div style={{paddingTop: 150 }}>
-        <div style={{ zIndex: 999, position: 'fixed', top: 50, backgroundColor: 'white', height: 150, width: '100%'}}>
-          <h1>Slider Demo</h1>
+      <div className="wrapper">
+        <div style={{ zIndex: 999, position: 'fixed', top: 50, height: 150}}>
+          <h1>Easing Demo</h1>
           <p>
             Time out:
             <input ref="timeOut" defaultValue={1000} />
@@ -39,10 +39,9 @@ export default class EasingExamples extends AnimatedComponent {
             <input ref="timeIn" defaultValue={500} />
             Out distance
             <input ref="distance" defaultValue={768} />
-            <hr />
 
             <select value={cmp.state.ease} onChange={(e) => this.setState({ ease: e.target.value }) }>
-              {Eases.map(n => <option>{n}</option>)}
+              {Eases.map(n => <option key={n}>{n}</option>)}
             </select>
 
             {'  '}
@@ -50,13 +49,12 @@ export default class EasingExamples extends AnimatedComponent {
 
           </p>
         </div>
-        <div style={{ paddingTop: 10, paddingBottom: 10, borderTop: '2px solid #999' }}>
-          <h2>{cmp.state.ease}</h2>
-          <div style={{zIndex: 3, height: 60, backgroundColor: '#eef', border: '1px solid black', marginTop: 12 }}>
+        <div style={{ paddingTop: 450, paddingBottom: 10 }}>
+          <div style={{zIndex: 3, height: 60, backgroundColor: '#eef', marginTop: 12 }}>
             <img src="/img/ball.jpeg" style={{ zIndex: 2,
                 backgroundColor: '#000',
                 borderRadius: 25, width: 50,
-                height: 50, 
+                height: 50,
                 textAlign: 'center', color: '#FFF',
                 position: 'relative',
                 transform: `translate3d(${this.state.left}px,0px,0px)` }} />

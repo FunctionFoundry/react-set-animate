@@ -1,0 +1,481 @@
+@import "bourbon/bourbon";
+@import "base/base";
+@import "neat/neat";
+
+body {
+  background-color: white;
+}
+
+a {
+  cursor: pointer;
+}
+
+/* Layout Elements */
+.wrapper {
+  @include clearfix;
+  @include outer-container(1200px);
+  padding: 0 $base-spacing;
+}
+
+header {
+  color: $purple;
+  height: 4rem;
+  line-height: 4rem;
+}
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none;   /* Chrome/Safari/Opera */
+  -khtml-user-select: none;    /* Konqueror */
+  -moz-user-select: none;      /* Firefox */
+  -ms-user-select: none;       /* Internet Explorer/Edge */
+  user-select: none;           /* Non-prefixed version, currently
+                                  not supported by any browser */
+}
+
+header.navigation {
+  $base-border-color: $darkest-purple !default;
+  $large-screen: em(860) !default;
+  $navigation-padding: 1em;
+  $navigation-background: white;
+  $navigation-color: $purple;
+  $navigation-color-hover: transparentize($purple, 0.2);
+  $navigation-height: 60px;
+  $navigation-nav-button-background: $action-color;
+  $navigation-nav-button-background-hover: lighten($navigation-background, 10%);
+  $navigation-nav-button-border: 1px solid lighten($navigation-nav-button-background, 20%);
+  $navigation-active-link-color: transparentize(white, 0.5);
+  $navigation-submenu-padding: 1em;
+  $navigation-submenu-width: 12em;
+  $horizontal-bar-mode: $medium-screen;
+
+  background-color: $navigation-background;
+  box-shadow: $base-box-shadow;
+  min-height: $navigation-height;
+  width: 100%;
+  z-index: 999;
+
+  .navigation-wrapper {
+    @include clearfix;
+    @include outer-container(1200px);
+    position: relative;
+    z-index: 9999;
+  }
+
+  .logo {
+    float: left;
+    max-height: $navigation-height;
+    padding-left: $navigation-padding;
+    padding-right: 2em;
+
+    img {
+      max-height: $navigation-height;
+      padding: 0.8em 0;
+    }
+  }
+
+  // Mobile view
+
+  .navigation-menu-button {
+    color: $navigation-color;
+    display: block;
+    float: right;
+    line-height: $navigation-height;
+    margin-right: $base-spacing / 2;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    @include media ($horizontal-bar-mode) {
+      display: none;
+    }
+
+    &:focus,
+    &:hover {
+      color: $navigation-color-hover;
+    }
+  }
+
+  // Nav menu
+
+  nav {
+    float: none;
+    min-height: $navigation-height;
+    z-index: 9999999;
+
+    @include media ($horizontal-bar-mode) {
+      float: right;
+    }
+  }
+
+  ul.navigation-menu {
+    clear: both;
+    display: none;
+    margin: 0 auto;
+    overflow: visible;
+    padding: 0;
+    width: 100%;
+    z-index: 9999;
+
+    &.show {
+      display: block;
+    }
+
+    @include media ($horizontal-bar-mode) {
+      display: inline;
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+
+// The nav items
+
+  ul li.nav-link {
+    background: $navigation-background;
+    display: block;
+    line-height: $navigation-height;
+    overflow: hidden;
+    padding-right: 0.8em;
+    text-align: right;
+    width: 100%;
+    z-index: 9999;
+
+    @include media ($horizontal-bar-mode) {
+      background: transparent;
+      display: inline;
+      line-height: $navigation-height;
+      text-decoration: none;
+      width: auto;
+    }
+
+    a {
+      color: $navigation-color;
+      display: inline-block;
+      text-decoration: none;
+
+      @include media ($horizontal-bar-mode) {
+        padding-right: 1em;
+      }
+
+      &:focus,
+      &:hover {
+        color: $navigation-color-hover;
+      }
+    }
+  }
+
+  .active-nav-item a {
+    border-bottom: 1px solid $navigation-active-link-color;
+    padding-bottom: 3px;
+  }
+
+
+// Sub menus
+
+  li.more.nav-link {
+    padding-right: 0;
+
+    @include media($horizontal-bar-mode) {
+      padding-right: $navigation-submenu-padding;
+    }
+
+    > ul > li:first-child a  {
+      padding-top: 1em;
+    }
+
+    a {
+      margin-right: $navigation-submenu-padding;
+    }
+
+    > a {
+      padding-right: 0.6em;
+    }
+
+    > a:after {
+      @include position(absolute, auto -0.4em auto auto);
+      content: '\25BE';
+      color: $navigation-color;
+    }
+  }
+
+  li.more {
+    overflow: visible;
+    padding-right: 0;
+
+    a {
+      padding-right: 0.8em;
+    }
+
+    > a {
+      padding-right: 1.6em;
+      position: relative;
+
+      @include media($horizontal-bar-mode) {
+        margin-right: $navigation-submenu-padding;
+      }
+
+      &:after {
+        content: '›';
+        font-size: 1.2em;
+        position: absolute;
+        right: $navigation-submenu-padding / 2;
+      }
+    }
+
+    &:focus > .submenu,
+    &:hover > .submenu {
+      display: block;
+    }
+
+    @include media($horizontal-bar-mode) {
+      padding-right: 0.8em;
+      position: relative;
+    }
+  }
+
+  ul.submenu {
+    display: none;
+    padding-left: 0;
+
+    @include media($horizontal-bar-mode) {
+      left: -$navigation-submenu-padding;
+      position: absolute;
+      top: 1.5em;
+    }
+
+    .submenu {
+      @include media($horizontal-bar-mode) {
+        left: $navigation-submenu-width - 0.2em;
+        top: 0;
+      }
+    }
+
+    li {
+      display: block;
+      padding-right: 0;
+
+      @include media($horizontal-bar-mode) {
+        line-height: $navigation-height / 1.3;
+
+        &:first-child > a {
+          border-top-left-radius: $base-border-radius;
+          border-top-right-radius: $base-border-radius;
+        }
+
+        &:last-child > a {
+          border-bottom-left-radius: $base-border-radius;
+          border-bottom-right-radius: $base-border-radius;
+          padding-bottom: 0.7em;
+        }
+      }
+
+      a {
+        background-color: darken($navigation-background, 3%);
+        display: inline-block;
+        text-align: right;
+        width: 100%;
+
+        @include media($horizontal-bar-mode) {
+          background-color: $navigation-background;
+          padding-left: $navigation-submenu-padding;
+          text-align: left;
+          width: $navigation-submenu-width;
+        }
+      }
+    }
+  }
+}
+
+.nav {
+    float: right;
+}
+
+.menu {
+
+  li {
+    display: inline-block;
+    margin-right: $base-spacing;
+  }
+
+  li:last-child {
+    margin-right: 0;
+  }
+
+  a {
+    color: $lightest-purple;
+  }
+}
+
+.page-heading {
+  height: 6rem;
+  background-color: white;
+  color: $purple;
+  margin-bottom: $base-spacing;
+  border-bottom: 1px solid $lightest-purple;
+
+  h1 {
+    margin: 0;
+    padding: 0;
+    line-height: 6rem;
+
+    @include media($tablet) {
+      font-size: $base-font-size * 1.5;
+      font-weight: 400;
+    }
+
+    @include media($phablet) {
+      font-size: $base-font-size * 1.25;
+      font-weight: 400;
+    }
+  }
+}
+
+.page-nav-container {
+  height: 3rem;
+  border-bottom: 1px solid $purple;
+  margin-bottom: $base-spacing;
+
+  .page-nav {
+
+    li {
+      display: inline-block;
+      margin-right: $base-spacing;
+    }
+
+    li:last-child {
+      margin-right: 0;
+    }
+
+    a {
+      color: $purple;
+
+    }
+
+    .active {
+      font-weight: 700;
+    }
+  }
+}
+
+button, .button, input[type="button"] {
+  text-transform: uppercase;
+  text-shadow: 0px -1px 1px rgba(0, 184, 94, 1);
+  box-shadow: 0px 1px 2px rgba(0, 184, 94, 1);
+}
+
+.secondary {
+  background-color: white;
+  border: 1px solid $purple;
+  color: $purple;
+  text-shadow: none;
+  box-shadow: none;
+}
+
+.secondary:focus {
+  outline: none;
+}
+
+.secondary:hover, .secondary:active, .secondary:hover:disabled {
+  background-color: $lightest-purple;
+  color: $purple;
+}
+
+.small {
+  padding: $small-spacing / 2 $base-spacing / 2;
+}
+
+
+label {
+  font-weight: 400;
+}
+
+/* Use this to create a half page width column that resizes into full width on smaller viewports */
+
+.half-width {
+  @include span-columns(6);
+
+  @include media($phablet) {
+    @include span-columns(12);
+  }
+
+  p {
+
+    @include media($phablet);
+      text-align: center;
+  }
+
+  button, .button {
+    width: 100%;
+  }
+}
+
+/* Use this to create a two thirds page width column that resizes into full width on smaller viewports */
+
+.two-thirds {
+  @include span-columns(8);
+
+  @include media($phablet) {
+    @include span-columns(12);
+  }
+}
+
+.section {
+  @include clearfix;
+  margin-bottom: $base-spacing;
+  padding-bottom: $base-spacing;
+  border-bottom: 1px solid $lightest-purple;
+}
+
+.flash {
+  text-align: center;
+  width: 100%;
+}
+
+.loading {
+  margin-top: $base-spacing;
+  width: 50px;
+}
+
+.footer {
+  @include outer-container;
+  margin-top: $base-spacing * 3;
+  margin-bottom: $base-spacing * 3;
+  height: 5rem;
+  padding: 20px 0;
+  text-align: center;
+  color: $dark-purple;
+
+  a {
+    color: $purple;
+    text-decoration: underline;
+  }
+}
+
+/* page elements */
+@import "account";
+@import "api";
+@import "content";
+@import "faqs";
+@import "login";
+@import "logs";
+@import "menu";
+@import "signup";
+@import "billing";
+@import "welcome";
+@import "dashboard";
+@import "bucket";
+@import "bucketlist";
+@import "submissions";
+
+/* utilities */
+.pull-right {
+  float: right;
+}
+
+.danger {
+  color: red;
+}
+
+.danger:hover {
+  color: red;
+}

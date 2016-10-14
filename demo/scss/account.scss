@@ -1,0 +1,23 @@
+.account-details {
+  @include span-columns(7);
+
+  @include media($phablet) {
+    @include span-columns(12);
+  }
+
+  button, .button {
+    width: 100%;
+  }
+}
+
+.account-sidebar {
+  text-align: right;
+
+  @include span-columns(5);
+
+  @include media($phablet) {
+    @include span-columns(12);
+    margin-top: $base-spacing;
+    text-align: center;
+  }
+}

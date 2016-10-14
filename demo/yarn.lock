@@ -1339,6 +1339,10 @@ ee-first@1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/ee-first/-/ee-first-1.1.1.tgz#590c61156b0ae2f4f0255732a158b266bc56b21d"
 
+element-class@^0.2.0:
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/element-class/-/element-class-0.2.2.tgz#9d3bbd0767f9013ef8e1c8ebe722c1402a60050e"
+
 emojis-list@^2.0.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/emojis-list/-/emojis-list-2.1.0.tgz#4daa4d9db00f9819880c79fa457ae5b09a1fd389"
@@ -1557,6 +1561,10 @@ events@^1.0.0:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/events/-/events-1.1.1.tgz#9ebdb7635ad099c70dcc4c2a1f5004288e8bd924"
 
+exenv@1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/exenv/-/exenv-1.2.0.tgz#3835f127abf075bfe082d0aed4484057c78e3c89"
+
 exit-hook@^1.0.0:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/exit-hook/-/exit-hook-1.1.1.tgz#f05ca233b48c05d54fff07765df8507e95c02ff8"
@@ -1753,7 +1761,7 @@ function-bind@^1.0.2, function-bind@^1.1.0, function-bind@~1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/function-bind/-/function-bind-1.1.0.tgz#16176714c801798e4e8f2cf7f7529467bb4a5771"
 
-functionfoundry@^0.11.0:
+functionfoundry, functionfoundry@^0.11.0:
   version "0.11.0"
   resolved "https://registry.yarnpkg.com/functionfoundry/-/functionfoundry-0.11.0.tgz#29d1ddc3abea8de064065dbd6b9cb92cc84c65fa"
 
@@ -3670,8 +3678,9 @@ pure-flux:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/pure-flux/-/pure-flux-1.1.0.tgz#92dc6c651206e02cff98f9a9419fb9619b16b04e"
 
-"pure-flux-router@file:../../pure-flux-router":
-  version "1.0.0"
+pure-flux-router@1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/pure-flux-router/-/pure-flux-router-1.0.1.tgz#9444ab7eb4389f3f05296b2665992dea4c997922"
   dependencies:
     functionfoundry "^0.11.0"
 
@@ -3733,6 +3742,18 @@ react-deep-force-update@^1.0.0:
 "react-dom@^0.14.0 || ^15.0.0", react-dom@^15.3.2:
   version "15.3.2"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-15.3.2.tgz#c46b0aa5380d7b838e7a59c4a7beff2ed315531f"
+
+react-fontawesome:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/react-fontawesome/-/react-fontawesome-1.2.0.tgz#ef7784553e22ce99483c6fd2e813818cca27d0ab"
+
+react-modal:
+  version "1.5.2"
+  resolved "https://registry.yarnpkg.com/react-modal/-/react-modal-1.5.2.tgz#acd60f19ed93ebbc7b09ea51624c7566fc615245"
+  dependencies:
+    element-class "^0.2.0"
+    exenv "1.2.0"
+    lodash.assign "^3.2.0"
 
 react-proxy@^1.1.7:
   version "1.1.8"
