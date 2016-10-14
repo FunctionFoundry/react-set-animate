@@ -74,6 +74,7 @@
     "webpack-hot-middleware": "^2.12.2"
   },
   "dependencies": {
+    "babel-polyfill": "^6.16.0",
     "functionfoundry": "^0.11.0",
     "pure-flux": "^1.1.0",
     "pure-flux-router": "1.0.1",
