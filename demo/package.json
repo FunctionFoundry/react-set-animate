@@ -5,7 +5,7 @@
   "scripts": {
     "clean": "rimraf public",
     "build:webpack": "cross-env NODE_ENV=production webpack --config webpack.config.prod.js --display-modules --display-reasons",
-    "build:static": "node runMetalSmith && cp -r img/ public/img/",
+    "build:static": "node runMetalSmith && cp -r ./img/ public/",
     "build": "npm run build:webpack && npm run build:static",
     "start": "node devServer.js",
     "start:static": "cd public && http-server . -p 3000",
@@ -80,6 +80,7 @@
     "react": "^15.3.2",
     "react-addons-pure-render-mixin": "^15.3.2",
     "react-dom": "^15.3.2",
+    "react-remarkable": "^1.1.1",
     "react-set-animate": "0.0.15"
   }
 }
