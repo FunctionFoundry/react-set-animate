@@ -12,7 +12,7 @@ module.exports = {
   },
   output: {
     path: path.join(__dirname, 'dist'),
-    publicPath: '/dist',
+    publicPath: '/dist/',
     filename: '[name]-' + moment().format('YYYY-MM-DD') + '.js',
   },
   resolveLoader: {
