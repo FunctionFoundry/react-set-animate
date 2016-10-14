@@ -7,7 +7,7 @@ let load = (module) => ['./src/' + module]
 
 module.exports = {
   entry: {
-    vendor: ["react", "react-dom", "pure-flux", "pure-flux-router", "react-set-animate"],
+    vendor: ["babel-polyfill", "react", "react-dom", "pure-flux", "pure-flux-router", "react-set-animate" ],
     app: load('index')
   },
   output: {

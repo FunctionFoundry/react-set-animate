@@ -1,10 +1,9 @@
+require('babel-polyfill')
+
 import React from 'react'
 import { render } from 'react-dom'
 import Page from './Root'
-
 import { subscribe } from 'pure-flux'
-
-require('babel-polyfill')
 
 subscribe( (state, action) => {
   console.log(new Date(), action, state)
