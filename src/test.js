@@ -1,8 +1,5 @@
 var test = require('tape');
-var Animate = require('../lib/index').Animate;
-var AnimateMixin = require('../lib/index').AnimateMixin;
-var AnimatedComponent = require('../lib/index').AnimatedComponent;
-var eases = require('../lib/index').eases;
+import {Animate, AnimateMixin, AnimatedComponent, Eases} from './index'
 
 test('it should be there', function(t) {
   t.plan(10);
@@ -10,7 +7,7 @@ test('it should be there', function(t) {
   t.equals( typeof Animate, 'function' );
   t.equals( typeof AnimatedComponent, 'function' );
   t.equals( typeof AnimateMixin, 'object' );
-  t.equals( typeof eases, 'object');
+  t.equals( typeof Eases, 'object');
 
   var cmp = new AnimatedComponent();
   var mockCmp = {

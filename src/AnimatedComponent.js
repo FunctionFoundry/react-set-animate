@@ -1,6 +1,5 @@
 import {Component} from 'react'
 import {Animate} from './Animate'
-import {eases} from './Eases'
 
 export class AnimatedComponent extends Component {
   constructor(props) {

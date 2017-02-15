@@ -29,36 +29,43 @@ var AnimatedComponent = require('react-set-animate').AnimatedComponent;
 
 The routines are provided by [d3-ease](https://github.com/d3/d3-ease). Please see that project for more information.
 
-- linear-in
-- linear-out
-- linear-in-out
-- quad-in
-- quad-out
-- quad-in-out
-- cubic-in
-- cubic-out
-- cubic-in-out
-- poly-in
-- poly-out
-- poly-in-out
-- sin-in
-- sin-out
-- sin-in-out
-- exp-in
-- exp-out
-- exp-in-out
-- circle-in
-- circle-out
-- circle-in-out
-- bounce-in
-- bounce-out
-- bounce-in-out
-- back-in
-- back-out
-- back-in-out
-- elastic-in
-- elastic-out
-- elastic-in-out
+  - Linear
+  - Quad
+  - QuadIn
+  - QuadOut
+  - QuadInOut
+  - Cubic
+  - CubicIn
+  - CubicOut
+  - CubicInOut
+  - Poly
+  - PolyIn
+  - PolyOut
+  - PolyInOut
+  - Sin
+  - SinIn
+  - SinOut
+  - SinInOut
+  - Exp
+  - ExpIn
+  - ExpOut
+  - ExpInOut
+  - Circle
+  - CircleIn
+  - CircleOut
+  - CircleInOut
+  - Bounce
+  - BounceIn
+  - BounceOut
+  - BounceInOut
+  - Back
+  - BackIn
+  - BackOut
+  - BackInOut
+  - Elastic
+  - ElasticIn
+  - ElasticOut
+  - ElasticInOut
 
 ## Core API
 

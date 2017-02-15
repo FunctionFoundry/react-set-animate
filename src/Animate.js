@@ -1,10 +1,8 @@
 /* Promise-based Animate routine */
 
-import {ease} from 'd3-ease'
+import * as eases from 'd3-ease'
 import {timer} from 'd3-timer'
 import {interpolate} from 'd3-interpolate'
-
-import {eases} from './Eases'
 
 /**
 * React state animation wrapper
@@ -52,12 +50,12 @@ export class Animate {
     this._setStopped = true;
   }
 
-  tween( prop, end, duration=500, easing='linear-in-out') {
+  tween( prop, end, duration=500, easing='Linear') {
 
     return new Promise((resolve, reject) => {
       var begin = this._getStateValue(prop),
       i = interpolate(begin, end),
-      easeFun = ease(easing)
+      easeFun = eases['ease' + easing] || eases.easeLinear
 
       /* The timer stops when the callback retuns a truthy value */
       timer( (elapsed,d) => {
