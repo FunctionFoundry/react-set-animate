@@ -1,8 +1,8 @@
 import {Component} from 'react'
-import Animate from './Animate'
-import eases from './Eases'
+import {Animate} from './Animate'
+import {eases} from './Eases'
 
-export default class AnimatedComponent extends Component {
+export class AnimatedComponent extends Component {
   constructor(props) {
     super(props)
     this.animator = new Animate(this)

@@ -4,13 +4,13 @@ import {ease} from 'd3-ease'
 import {timer} from 'd3-timer'
 import {interpolate} from 'd3-interpolate'
 
-import eases from './Eases'
+import {eases} from './Eases'
 
 /**
 * React state animation wrapper
 *  - update state value by requestAnimationFrame loop
 */
-export default class Animate {
+export class Animate {
 
   /* Animation constructor accept data container and frames per second.
   */

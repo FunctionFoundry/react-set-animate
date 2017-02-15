@@ -2,15 +2,15 @@ var test = require('tape');
 var Animate = require('../lib/index').Animate;
 var AnimateMixin = require('../lib/index').AnimateMixin;
 var AnimatedComponent = require('../lib/index').AnimatedComponent;
-var Eases = require('../lib/index').Eases;
+var eases = require('../lib/index').eases;
 
 test('it should be there', function(t) {
   t.plan(10);
 
-  t.equals(typeof Animate, 'function' );
-  t.equals(typeof AnimatedComponent, 'function' );
-  t.equals(typeof AnimateMixin, 'object' );
-  t.equals( typeof Eases, 'object');
+  t.equals( typeof Animate, 'function' );
+  t.equals( typeof AnimatedComponent, 'function' );
+  t.equals( typeof AnimateMixin, 'object' );
+  t.equals( typeof eases, 'object');
 
   var cmp = new AnimatedComponent();
   var mockCmp = {
